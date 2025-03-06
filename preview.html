@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview</title>
+</head>
+<body>
+
+
+  <div id="displayContent"></div>
+
+  <script>
+    // Get the saved content from local storage
+    const savedContent = localStorage.getItem('submittedContent');
+
+    if (savedContent) {
+      document.getElementById('displayContent').innerHTML = savedContent;
+    } else {
+      document.getElementById('displayContent').innerHTML = "<p>No content submitted yet.</p>";
+    }
+  </script>
+
+</body>
+</html>
