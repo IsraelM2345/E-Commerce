@@ -49,6 +49,17 @@
         });
       }
     });
+
+    document.getElementById('editorForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form from reloading
+      const content = tinymce.get('shop').getContent(); // Get TinyMCE content
+
+      // Save content to local storage
+      localStorage.setItem('submittedContent', content);
+
+      // Redirect to the preview page
+      window.location.href = "preview.html";
+    });
   </script>
   
 </body>
