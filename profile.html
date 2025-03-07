@@ -3,64 +3,116 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profile</title>
+  <title>TechWear Apparel - Profile</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <form id="editorForm" action="save.php" method="post">
-    <textarea name="profileContent" id="editor"></textarea>
-    <br>
-    <button type="submit">Full Screen</button>
-  </form>
-
+  <table style="height: 930.238px;" border="none" width="100%">
+    <tbody>
+      <!-- Header Row -->
+      <tr>
+        <td class="header" colspan="3">
+          <div class="header-nav">
+            <nav class="left-section">
+              <a href="#">Seller Center</a>
+              <a href="#">Sell on CN</a>
+              <a href="#">Download</a>
+            </nav>
+            <nav class="right-section">
+              <a href="#">Notifications</a>
+              <a href="#">Help</a>
+              <a href="#">English</a>
+              <a href="#">Sign Up</a> |
+              <a href="#">Login</a>
+            </nav>
+          </div>
+          <div class="header-title"><strong>T</strong>ECH<strong>W</strong>EAR APPAREL</div>
+        </td>
+      </tr>
+      <!-- Navigation Row -->
+      <tr>
+        <td class="navigation" colspan="3">
+          <a href="index.html">Home</a>
+          <a href="shop.html">Shop/Products</a>
+          <a href="message.html">Messages</a>
+          <a href="cart.html">Add to Cart</a>
+          <a href="profile.html">Profile</a>
+        </td>
+      </tr>
+      <!-- Main Content Row -->
+      <tr>
+        <!-- Sidebar (Left) -->
+        <td class="sidebar5">&nbsp;</td>
+        <!-- Main Content -->
+        <td class="main-content">
+          <div class="profile-container">
+            <div class="profile-grid">
+              <!-- Profile Picture Section -->
+              <div class="profile-picture-section">
+                <div class="profile-picture-small">
+                  <img src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg" alt="Profile Picture">
+                </div>
+                <div class="profile-name">John Doe</div>
+                <button class="edit-profile-button">Edit Profile</button>
+              </div>
+              <!-- Profile Header -->
+              <div class="profile-header">
+                <h2>My Profile</h2>
+                <hr>
+              </div>
+              <!-- Profile Details -->
+              <div class="profile-details">
+                <!-- Left Section (User Info) -->
+                <div class="user-info">
+                  <label>
+                    <strong>Name:</strong>
+                    <input type="text" value="John Doe">
+                  </label>
+                  <label>
+                    <strong>Username:</strong>
+                    <input type="text" value="johndoe123">
+                  </label>
+                  <label>
+                    <strong>Email:</strong>
+                    <input type="email" value="johndoe@email.com">
+                  </label>
+                  <label>
+                    <strong>Phone Number:</strong>
+                    <input type="tel" value="+1234567890">
+                  </label>
+                  <label>
+                    <strong>Date of Birth:</strong>
+                    <input type="date" value="2000-01-01">
+                  </label>
+                  <label>
+                    <strong>Gender:</strong>
+                    <select>
+                      <option selected="selected" value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </label>
+                </div>
+                <!-- Right Section (Profile Picture) -->
+                <div class="profile-picture-large">
+                  <img src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg" alt="Profile Picture">
+                  <button class="edit-image-button">Edit Image</button>
+                </div>
+              </div>
+            </div>
+            <!-- Logout Button -->
+            <button class="logout-button"><strong>Log out</strong></button>
+          </div>
+        </td>
+        <!-- Sidebar (Right) -->
+        <td class="sidebar5" style="text-align: right;">&nbsp;</td>
+      </tr>
+      <!-- Footer -->
+      <tr>
+        <td class="footer" colspan="3">&copy; 2025 ClothingBrand. All rights reserved.</td>
+      </tr>
+    </tbody>
+  </table>
   <script src="tinymce/js/tinymce/tinymce.min.js"></script>
-
-  <script>
-    tinymce.init({
-      selector: 'textarea#editor', 
-      width: 1000,
-      height: 500,
-      plugins: [
-        'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
-        'searchreplace', 'wordcount', 'visualblocks', 'code', 'fullscreen', 'insertdatetime', 'media', 
-        'table', 'emoticons', 'template', 'codesample'
-      ],
-      toolbar: 'undo redo | styles | bold italic underline | alignleft aligncenter alignright alignjustify |' + 
-        'bullist numlist outdent indent | link image | print preview media fullscreen | ' +
-        'forecolor backcolor emoticons',
-      menu: {
-        favs: {title: 'menu', items: 'code visualaid | searchreplace | emoticons'}
-      },
-      menubar: 'favs file edit view insert format tools table',
-      content_style: 'body{font-family:Helvetica,Arial,sans-serif; font-size:16px}',
-
-      // **Save content to local storage**
-      setup: function (editor) {
-        editor.on('change', function () {
-          localStorage.setItem('profileContent', editor.getContent());
-        });
-
-        editor.on('init', function () {
-          const savedContent = localStorage.getItem('profileContent');
-          if (savedContent) {
-            editor.setContent(savedContent);
-          }
-        });
-      }
-    });
-
-    document.getElementById('editorForm').addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevent form from reloading
-      const content = tinymce.get('editor').getContent(); // Get TinyMCE content
-
-      // Save content to local storage
-      localStorage.setItem('submittedContent', content);
-
-      // Redirect to the preview page
-      window.location.href = "preview.html";
-    });
-  </script>
-  
 </body>
 </html>

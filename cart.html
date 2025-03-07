@@ -3,64 +3,149 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Add to Cart</title>
+  <title>TechWear Apparel - Cart</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <form id="editorForm" action="save.php" method="post">
-    <textarea name="cartContent" id="cart"></textarea>
-    <br>
-    <button type="submit">Full Screen</button>
-  </form>
-
+  <table style="height: 957.788px;" border="none" width="100%">
+    <tbody>
+      <!-- Header Row -->
+      <tr>
+        <td class="header" colspan="3">
+          <div class="header-nav">
+            <nav class="left-section">
+              <a href="#">Seller Center</a>
+              <a href="#">Sell on CN</a>
+              <a href="#">Download</a>
+            </nav>
+            <nav class="right-section">
+              <a href="#">Notifications</a>
+              <a href="#">Help</a>
+              <a href="#">English</a>
+              <a href="#">Sign Up</a> |
+              <a href="#">Login</a>
+            </nav>
+          </div>
+          <div class="header-title"><strong>T</strong>ECH<strong>W</strong>EAR APPAREL</div>
+        </td>
+      </tr>
+      <!-- Navigation Row -->
+      <tr>
+        <td class="navigation" colspan="3">
+          <a href="index.html">Home</a>
+          <a href="shop.html">Shop/Products</a>
+          <a href="message.html">Messages</a>
+          <a href="cart.html">Add to Cart</a>
+          <a href="profile.html">Profile</a>
+        </td>
+      </tr>
+      <!-- Main Content Row -->
+      <tr>
+        <!-- Sidebar (Left) -->
+        <td class="sidebar4">
+          <ul>
+            <li><a href="#">Best Sellers</a></li>
+            <li><a href="#">Trending Products</a></li>
+            <li><a href="#">New Arrivals</a></li>
+            <li><a href="#">Discounted Products</a></li>
+            <li><a href="#">Seasonal Suggestions</a></li>
+          </ul>
+        </td>
+        <!-- Main Content (Product Grid) -->
+        <td class="main-content">
+          <div class="parent">
+            <!-- Labels (Header Row) -->
+            <div class="labels">
+              <div>&nbsp;</div>
+              <div>Product</div>
+              <div>Price</div>
+              <div>Quantity</div>
+              <div>Total Price</div>
+              <div>Actions</div>
+            </div>
+            <!-- Products (Middle Grid) -->
+            <div class="products">
+              <!-- Product 1 -->
+              <input type="checkbox">
+              <div>Product 1</div>
+              <div><strong>₱499</strong></div>
+              <div><input type="number" min="1" value="1"></div>
+              <div><strong>₱499</strong></div>
+              <div><button class="remove-button">Remove</button></div>
+              <!-- Product 2 -->
+              <input type="checkbox">
+              <div>Product 2</div>
+              <div><strong>₱799</strong></div>
+              <div><input type="number" min="1" value="1"></div>
+              <div><strong>₱799</strong></div>
+              <div><button class="remove-button">Remove</button></div>
+              <!-- Product 3 -->
+              <input type="checkbox">
+              <div>Product 3</div>
+              <div><strong>₱599</strong></div>
+              <div><input type="number" min="1" value="1"></div>
+              <div><strong>₱599</strong></div>
+              <div><button class="remove-button">Remove</button></div>
+              <!-- Product 4 -->
+              <input type="checkbox">
+              <div>Product 4</div>
+              <div><strong>₱999</strong></div>
+              <div><input type="number" min="1" value="1"></div>
+              <div><strong>₱999</strong></div>
+              <div><button class="remove-button">Remove</button></div>
+              <!-- Product 5 -->
+              <input type="checkbox">
+              <div>Product 5</div>
+              <div><strong>₱499</strong></div>
+              <div><input type="number" min="1" value="1"></div>
+              <div><strong>₱499</strong></div>
+              <div><button class="remove-button">Remove</button></div>
+              <!-- Product 6 -->
+              <input type="checkbox">
+              <div>Product 6</div>
+              <div><strong>₱799</strong></div>
+              <div><input type="number" min="1" value="1"></div>
+              <div><strong>₱799</strong></div>
+              <div><button class="remove-button">Remove</button></div>
+              <!-- Product 7 -->
+              <input type="checkbox">
+              <div>Product 7</div>
+              <div><strong>₱599</strong></div>
+              <div><input type="number" min="1" value="1"></div>
+              <div><strong>₱599</strong></div>
+              <div><button class="remove-button">Remove</button></div>
+              <!-- Product 8 -->
+              <input type="checkbox">
+              <div>Product 8</div>
+              <div><strong>₱999</strong></div>
+              <div><input type="number" min="1" value="1"></div>
+              <div><strong>₱999</strong></div>
+              <div><button class="remove-button">Remove</button></div>
+            </div>
+            <!-- Checkout (Bottom Grid) -->
+            <div class="checkout">
+              <div style="font-weight: bold;">Total: ₱2896</div>
+              <button class="checkout-button">Checkout</button>
+            </div>
+          </div>
+        </td>
+        <!-- Sidebar (Right) -->
+        <td class="sidebar4">
+          <ul>
+            <li><a href="#"><u>Help</u></a></li>
+            <li><a href="#"><u>Refund and Return</u></a></li>
+            <li><a href="#"><u>Policy</u></a></li>
+            <li><a href="#"><u>FAQs</u></a></li>
+            <li><a href="#"><u>Contact Us</u></a></li>
+          </ul>
+        </td>
+      </tr>
+      <!-- Footer -->
+      <tr>
+        <td class="footer" colspan="3">&copy; 2025 ClothingBrand. All rights reserved.</td>
+      </tr>
+    </tbody>
+  </table>
   <script src="tinymce/js/tinymce/tinymce.min.js"></script>
-
-  <script>
-    tinymce.init({
-      selector: 'textarea#cart', 
-      width: 1000,
-      height: 500,
-      plugins: [
-        'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
-        'searchreplace', 'wordcount', 'visualblocks', 'code', 'fullscreen', 'insertdatetime', 'media', 
-        'table', 'emoticons', 'template', 'codesample'
-      ],
-      toolbar: 'undo redo | styles | bold italic underline | alignleft aligncenter alignright alignjustify |' + 
-        'bullist numlist outdent indent | link image | print preview media fullscreen | ' +
-        'forecolor backcolor emoticons',
-      menu: {
-        favs: {title: 'menu', items: 'code visualaid | searchreplace | emoticons'}
-      },
-      menubar: 'favs file edit view insert format tools table',
-      content_style: 'body{font-family:Helvetica,Arial,sans-serif; font-size:16px}',
-
-      // **Save content to local storage**
-      setup: function (editor) {
-        editor.on('change', function () {
-          localStorage.setItem('cartContent', editor.getContent());
-        });
-
-        editor.on('init', function () {
-          const savedContent = localStorage.getItem('cartContent');
-          if (savedContent) {
-            editor.setContent(savedContent);
-          }
-        });
-      }
-    });
-
-    document.getElementById('editorForm').addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevent form from reloading
-      const content = tinymce.get('cart').getContent(); // Get TinyMCE content
-
-      // Save content to local storage
-      localStorage.setItem('submittedContent', content);
-
-      // Redirect to the preview page
-      window.location.href = "preview.html";
-    });
-  </script>
-  
 </body>
 </html>

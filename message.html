@@ -3,64 +3,100 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profile</title>
+  <title>TechWear Apparel - Messages</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <form id="editorForm" action="save.php" method="post">
-    <textarea name="messageContent" id="message"></textarea>
-    <br>
-    <button type="submit">Full Screen</button>
-  </form>
-
+  <table style="height: 930.238px;" border="none" width="100%">
+    <tbody>
+      <!-- Header Row -->
+      <tr>
+        <td class="header" colspan="3">
+          <div class="header-nav">
+            <nav class="left-section">
+              <a href="#">Seller Center</a>
+              <a href="#">Sell on CN</a>
+              <a href="#">Download</a>
+            </nav>
+            <nav class="right-section">
+              <a href="#">Notifications</a>
+              <a href="#">Help</a>
+              <a href="#">English</a>
+              <a href="#">Sign Up</a> |
+              <a href="#">Login</a>
+            </nav>
+          </div>
+          <div class="header-title"><strong>T</strong>ECH<strong>W</strong>EAR APPAREL</div>
+        </td>
+      </tr>
+      <!-- Navigation Row -->
+      <tr>
+        <td class="navigation" colspan="3">
+          <a href="index.html">Home</a>
+          <a href="shop.html">Shop/Products</a>
+          <a href="message.html">Messages</a>
+          <a href="cart.html">Add to Cart</a>
+          <a href="profile.html">Profile</a>
+        </td>
+      </tr>
+      <!-- Main Content Row -->
+      <tr>
+        <!-- Sidebar (Left) -->
+        <td class="sidebar3">
+          <h2>Contact</h2>
+          <div class="contact-item">
+            <img src="https://cdn-icons-png.flaticon.com/128/15047/15047435.png" alt="Facebook">
+            <div>
+              <p><a href="#">Facebook</a></p>
+              <p class="description">Visit our Facebook Page</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <img src="https://cdn-icons-png.flaticon.com/128/4782/4782345.png" alt="Tiktok">
+            <div>
+              <p><a href="#">Tiktok</a></p>
+              <p class="description">Visit our Tiktok Shop</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <img src="https://cdn-icons-png.flaticon.com/128/3955/3955024.png" alt="Instagram">
+            <div>
+              <p><a href="#">Instagram</a></p>
+              <p class="description">Message on our Instagram</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <img src="https://cdn-icons-png.flaticon.com/128/5969/5969020.png" alt="Twitter">
+            <div>
+              <p><a href="#">Twitter</a></p>
+              <p class="description">You can message us on Twitter</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <img src="https://cdn-icons-png.flaticon.com/128/3178/3178158.png" alt="Email">
+            <div>
+              <p><a href="#">Email</a></p>
+              <p class="description">You can message us in our Email</p>
+            </div>
+          </div>
+        </td>
+        <!-- Main Content -->
+        <td class="main-content">
+          <div class="chat-window">
+            <p><strong>User:</strong> Hello!</p>
+            <p><strong>Support:</strong> Hi! How can I help you?</p>
+          </div>
+          <input class="chat-input" type="text" placeholder="Type your message here...">
+        </td>
+        <!-- Sidebar (Right) -->
+        <td class="sidebar3" style="text-align: right;">&nbsp;</td>
+      </tr>
+      <!-- Footer -->
+      <tr>
+        <td class="footer" colspan="3">&copy; 2025 ClothingBrand. All rights reserved.</td>
+      </tr>
+    </tbody>
+  </table>
   <script src="tinymce/js/tinymce/tinymce.min.js"></script>
-
-  <script>
-    tinymce.init({
-      selector: 'textarea#message', 
-      width: 1000,
-      height: 500,
-      plugins: [
-        'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
-        'searchreplace', 'wordcount', 'visualblocks', 'code', 'fullscreen', 'insertdatetime', 'media', 
-        'table', 'emoticons', 'template', 'codesample'
-      ],
-      toolbar: 'undo redo | styles | bold italic underline | alignleft aligncenter alignright alignjustify |' + 
-        'bullist numlist outdent indent | link image | print preview media fullscreen | ' +
-        'forecolor backcolor emoticons',
-      menu: {
-        favs: {title: 'menu', items: 'code visualaid | searchreplace | emoticons'}
-      },
-      menubar: 'favs file edit view insert format tools table',
-      content_style: 'body{font-family:Helvetica,Arial,sans-serif; font-size:16px}',
-
-      // **Save content to local storage**
-      setup: function (editor) {
-        editor.on('change', function () {
-          localStorage.setItem('messageContent', editor.getContent());
-        });
-
-        editor.on('init', function () {
-          const savedContent = localStorage.getItem('messageContent');
-          if (savedContent) {
-            editor.setContent(savedContent);
-          }
-        });
-      }
-    });
-
-    document.getElementById('editorForm').addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevent form from reloading
-      const content = tinymce.get('message').getContent(); // Get TinyMCE content
-
-      // Save content to local storage
-      localStorage.setItem('submittedContent', content);
-
-      // Redirect to the preview page
-      window.location.href = "preview.html";
-    });
-  </script>
-  
 </body>
 </html>
