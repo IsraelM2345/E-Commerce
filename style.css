@@ -108,22 +108,22 @@ body {
   padding: 10px;
 }
 
-.left-section,
-.next-section,
-.right-section,
-.additional-section {
+.footer .left-section,
+.footer .next-section,
+.footer .right-section,
+.footer .additional-section {
   display: flex;
   flex-direction: column;
   text-align: left;
   line-height: 45px;
 }
 
-.follow, .newsletter {
+.footer .follow, .newsletter {
   margin: 0px;
   text-align: center;
 }
 
-.additional-section {
+.footer .additional-section {
   padding-right: 15px;
 }
 .footer-links {
